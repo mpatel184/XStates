@@ -53,7 +53,6 @@ export default function Component(){
 
     return (
         <>
-        <h1>Select Location</h1>
         <div style={{display:"flex",gap:"10px",position:"absolute",top:"50px",left:"50px",right:"50%"}}>
             <select onChange={(e) => setCountry(e.target.value)} value={country} style={{height:"30px",padding:"5px"}}>
                 <option value="">Select Country</option>
@@ -80,6 +79,11 @@ export default function Component(){
                 ))}
             </select>
         </div>
+        {city && state && country && (
+            <div data-testid="selected-location">
+                <h2>You selected {city}, {state}, {country}</h2>
+            </div>
+        )}
         </>
         
     )
